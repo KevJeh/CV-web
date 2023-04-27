@@ -25,118 +25,77 @@ contactLink.addEventListener('mouseover', () => {
   alert('¡Gracias por visitar mi página! Si desea ponerse en contacto conmigo,envíeme un correo electrónico a kevjeh@ejemplo.com');
 });
 
+const scrollTopBtn = document.getElementById('scroll-top-btn');
 
-
-// Selecciona todas las secciones de la página
-const sections = document.querySelectorAll('section');
-
-
-// Selecciona todos los enlaces de la navegación
-const links = document.querySelectorAll('nav a');
-
-
-
-// Inicializa la sección activa como null
-let activeSection = null;
-
-// Agrega un evento clic a cada enlace
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault(); // evita la acción predeterminada del enlace
-
-    if (activeSection) {
-      activeSection.style.fontSize = '';
-    }
-    
-
-    const sectionId = link.getAttribute('href');
-
-    const section = document.querySelector(sectionId);
-
-    section.style.fontSize = '20px';
-
-    activeSection = section;
-
-    section.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const sobremiSection = document.querySelector('#sobre-mi');
-const educacionSection = document.querySelector('#educacion');
-const experienciaSection = document.querySelector('#experiencia');
-const habilidadesSection = document.querySelector('#habilidades');
-const proyectosSection = document.querySelector('#proyectos');
-
-let seccionActual = null;
-
-educacionSection.addEventListener('click', () => {
-  if (seccionActual !== educacionSection) {
-    if (seccionActual !== null) {
-      seccionActual.style.fontSize = '16px';
-    }
-    educacionSection.style.fontSize = '20px';
-    seccionActual = educacionSection;
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    scrollTopBtn.classList.add('scroll-top-btn-show');
   } else {
-    educacionSection.style.fontSize = '16px';
-    seccionActual = null;
+    scrollTopBtn.classList.remove('scroll-top-btn-show');
   }
 });
 
+const form = document.querySelector("#formulario");
+const nombre = document.querySelector("#nombre");
+const correo = document.querySelector("#correo");
+const asunto = document.querySelector("#asunto");
+const mensaje = document.querySelector("#mensaje");
+const enviar = document.querySelector("#enviar");
 
-sobremiSection.addEventListener('click', () => {
-  if (seccionActual !== sobremiSection) {
-    if (seccionActual !== null) {
-      seccionActual.style.fontSize = '16px';
-    }
-    sobremiSection.style.fontSize = '20px';
-    seccionActual = sobremiSection;
-  } else {
-    sobremiSection.style.fontSize = '16px';
-    seccionActual = null;
+form.addEventListener("submit", function(event) {
+  // Validación del campo Nombre
+  if (nombre.value === "") {
+    alert("Por favor ingrese su nombre");
+    event.preventDefault();
+    return false;
+  } else if (nombre.value.length > 50) {
+    alert("El nombre no puede contener más de 50 caracteres");
+    event.preventDefault();
+    return false;
   }
-});
 
-experienciaSection.addEventListener('click', () => {
-  if (seccionActual !== experienciaSection) {
-    if (seccionActual !== null) {
-      seccionActual.style.fontSize = '16px';
-    }
-    experienciaSection.style.fontSize = '20px';
-    seccionActual = experienciaSection;
-  } else {
-    experienciaSection.style.fontSize = '16px';
-    seccionActual = null;
+  // Validación del campo Correo electrónico
+  const correoExp = /^\S+@\S+\.\S+$/;
+  if (correo.value === "") {
+    alert("Por favor ingrese su correo electrónico");
+    event.preventDefault();
+    return false;
+  } else if (!correoExp.test(correo.value)) {
+    alert("Por favor ingrese un correo electrónico válido");
+    event.preventDefault();
+    return false;
   }
-});
 
-habilidadesSection.addEventListener('click', () => {
-  if (seccionActual !== habilidadesSection) {
-    if (seccionActual !== null) {
-      seccionActual.style.fontSize = '16px';
-    }
-    habilidadesSection.style.fontSize = '20px';
-    seccionActual = habilidadesSection;
-  } else {
-    habilidadesSection.style.fontSize = '16px';
-    seccionActual = null;
+  // Validación del campo Asunto
+  if (asunto.value === "") {
+    alert("Por favor ingrese un asunto");
+    event.preventDefault();
+    return false;
+  } else if (asunto.value.length > 50) {
+    alert("El asunto no puede contener más de 50 caracteres");
+    event.preventDefault();
+    return false;
   }
-});
 
-proyectosSection.addEventListener('click', () => {
-  if (seccionActual !== proyectosSection) {
-    if (seccionActual !== null) {
-      seccionActual.style.fontSize = '16px';
-    }
-    proyectosSection.style.fontSize = '20px';
-    seccionActual = proyectosSection;
-  } else {
-    proyectosSection.style.fontSize = '16px';
-    seccionActual = null;
+  // Validación del campo Mensaje
+  if (mensaje.value === "") {
+    alert("Por favor ingrese su mensaje");
+    event.preventDefault();
+    return false;
+  } else if (mensaje.value.length > 300) {
+    alert("El mensaje no puede contener más de 300 caracteres");
+    event.preventDefault();
+    return false;
   }
+
+  // Habilitar el botón de envío si todos los campos son válidos
+  enviar.disabled = false;
+
+  // Envío del formulario
+  // Aquí podrías agregar código para enviar el formulario a un servidor web
 });
-
-
-
 

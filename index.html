@@ -9,7 +9,11 @@
 </head>
 <body>
 	<header>
-		<h1>Kev Jeh</h1>
+		<div>
+			<h1>Kev Jeh</h1>
+			<img class="foto_de_perfil" src="C:/Users/jehel´s brothers/Documents/Curso Ticmas/Proyecto Final/img/foto de perfil.jpg"> 
+		</div>
+		
 		<nav>
 			<ul>
 				<li><a href="#sobre-mi">Sobre Mí</a></li>
@@ -17,6 +21,7 @@
 				<li><a href="#educacion">Formacion y cursos</a></li>
 				<li><a href="#habilidades">Hobbies y soft skills</a></li>
 				<li><a href="#proyectos">Proyectos</a></li>
+				<li><a href="#contacto">Contacto</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -87,7 +92,7 @@
 		<section id="habilidades">
 			<h2>Habilidades y hobbies</h2>
 			<ul>
-				<li><i class="fa-regular fa-circle-check">Soy un apasionado por la tecnología y el diseño web, con habilidades en HTML, CSS y JavaScript. Me encanta crear sitios web interactivos y amigables con el usuario. También tengo habilidades en diseño gráfico y edición de imágenes. Siempre estoy buscando aprender cosas nuevas y mejorar mis habilidades. Soy una persona muy creativa y me encanta trabajar en equipo..</i></li>
+				<li><i class="fa-regular fa-circle-check"></i>Soy un apasionado por la tecnología y el diseño web, con habilidades en HTML, CSS y JavaScript. Me encanta crear sitios web interactivos y amigables con el usuario. También tengo habilidades en diseño gráfico y edición de imágenes. Siempre estoy buscando aprender cosas nuevas y mejorar mis habilidades. Soy una persona muy creativa y me encanta trabajar en equipo..</li>
 				<li><i class="fa-regular fa-circle-check"></i>HTML</li>
 				<li><i class="fa-regular fa-circle-check"></i>CSS</li>
 				<li><i class="fa-regular fa-circle-check"></i>JavaScript</li>
@@ -100,21 +105,58 @@
 		<section id="proyectos">
 			<h2>Proyectos</h2>
 			<ul>
-				<li>
+				<li class="proyectos__listas">
 					<h3>Barberia</h3>
-					<p><strong>Tecnologías utilizadas:</strong> Lista de tecnologías usadas en el proyecto</p>
-					<p><strong>Descripción:</strong> Breve descripción del proyecto y sus objetivos.</p>
-					<p><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Barberia-Final">https://github.com/KevJeh/Barberia-Final</a></p>
+					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
+					<p><strong>Descripción:</strong> La barbería alura es un sitio web destinado a barberias para la promoción y gestion de turnos. Su diseño sencillo y responsivo permite una correcta fluidez en su navegación.</p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Barberia-Final">Proyecto Barberia</a></p>
 				</li>
-				<li>
+				<li class="proyectos__listas">
 					<h3>Encriptador</h3>
-					<p><strong>Tecnologías utilizadas:</strong> Lista de tecnologías usadas en el proyecto</p>
-					<p><strong>Descripción:</strong> Breve descripción del proyecto y sus objetivos.</p>
-					<p><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Encriptador">https://github.com/KevJeh/Encriptador</a></p>
+					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
+					<p><strong>Descripción:</strong>El encriptador/desencriptador, toma una cadena de caracteres de entrada y reemplaza las letras por su correspondiente encriptación. Luego, devuelve un mensaje de salida con el mensaje encriptado.</p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Encriptador">Proyecto Enciptador</a></p>
+				</li>
+				<li class="proyectos__listas">
+					<h3>Pagina de empresa de software</h3>
+					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
+					<p><strong>Descripción:</strong>Este proyecto cuenta con un diseño responsivo y atractivo. Brinda la posibilidad de acercar al usuario a la empresa y permitirle conocer los planes y precios disponibles, ahorrando mucho tiempo y atrayendo nuevos clientes.</p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/CV-web/">Proyecto web - Empresa de software</a></p>
 				</li>
 			</ul>
 		</section>
-		
+
+		<section class="principal__contacto" id="contacto">
+			<div class="contacto">
+				<h2>Contacto</h2>
+				<form id="formulario">
+					<label for="nombre">Nombre:</label>
+					<input type="text" id="nombre" name="nombre" required>
+				  
+					<label for="correo">Correo electrónico:</label>
+					<input type="email" id="correo" name="correo" required>
+				  
+					<label for="asunto">Asunto:</label>
+					<input type="text" id="asunto" name="asunto" required>
+				  
+					<label for="mensaje">Mensaje:</label>
+					<textarea id="mensaje" name="mensaje" required></textarea>
+				  
+					<button type="submit" id="enviar">Enviar</button>
+				  </form>
+				  
+			</div>
+			<div class="ubicacion">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d461830.3170483323!2d55.64213894069992!3d25.2689252138534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1681953524762!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0.05;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</section>
+
+		</section>
+		<section class="volverArriba">
+			<button id="scroll-top-btn" class="scroll-top-btn">
+				<i class="fas fa-arrow-up"></i>
+			</button>			  
+		</section>
 	</main>
 
 	<footer>
