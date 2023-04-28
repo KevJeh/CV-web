@@ -1,28 +1,6 @@
-const header = document.querySelector('header');
-let rotation = 0;
-let intervalId;
-let animationCompleted = false;
-
-header.addEventListener('click', () => {
-  if (!animationCompleted) {
-    intervalId = setInterval(() => {
-      header.style.transform = `rotate(${rotation}deg)`;
-      rotation += 10;
-      if (rotation >= 360) {
-        clearInterval(intervalId);
-        setTimeout(() => {
-          header.style.transform = '';
-          animationCompleted = true;
-        }, 0); 
-        rotation = 0;
-      }
-    }, 25);
-  }
-});
-
 const contactLink = document.querySelector('footer a');
 contactLink.addEventListener('mouseover', () => {
-  alert('¡Gracias por visitar mi página! Si desea ponerse en contacto conmigo,envíeme un correo electrónico a kevjeh@ejemplo.com');
+  alert('¡Gracias por visitar mi página! Si desea ponerse en contacto conmigo, envíeme un correo electrónico a kevjeh@ejemplo.com');
 });
 
 const scrollTopBtn = document.getElementById('scroll-top-btn');
@@ -92,10 +70,34 @@ form.addEventListener("submit", function(event) {
     return false;
   }
 
-  // Habilitar el botón de envío si todos los campos son válidos
   enviar.disabled = false;
 
-  // Envío del formulario
-  // Aquí podrías agregar código para enviar el formulario a un servidor web
 });
 
+// Descargar PDF
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Obtener el botón de descarga
+  const botonPDF = document.querySelector("#boton-pdf");
+
+  // Agregar un controlador de eventos al botón de descarga
+  botonPDF.addEventListener("click", function() {
+    // Obtener el elemento principal que se desea convertir en PDF
+    const miCV = document.querySelector("#mi-cv");
+
+    // Configurar las opciones de conversión de PDF
+    const opcionesPDF = {
+      margin: [1, 1, 1, 1],
+      filename: 'mi-cv.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { format: 'a4', orientation: 'portrait' }
+    };
+
+    // Convertir el elemento principal en PDF
+    html2pdf().from(miCV).set(opcionesPDF).save();
+
+    // Abrir el PDF en una nueva pestaña
+    window.open("mi-cv.pdf", "_blank");
+  });
+});
