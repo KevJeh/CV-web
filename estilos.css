@@ -163,10 +163,12 @@ ul {
 #proyectos {
 background-color: #fff;
 padding: 3.125rem 1.25rem;
+margin-top: 8rem;
 }
 
 section#proyectos h2 {
 margin-bottom: 3.125rem;
+margin-top: 1rem;
 }
 
 section#proyectos ul {
