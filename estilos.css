@@ -395,10 +395,10 @@ footer {
 	z-index: -1;
 	}
 
-#animacion{
-	width: 100%;
-}
-	
+	#animacion{
+		width: 100%;
+	}
+		
 	footer p {
 	margin-bottom: 1.25rem;
 	}
