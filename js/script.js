@@ -1,4 +1,4 @@
-const contactLink = document.querySelector('footer a');
+const contactLink = document.getElementById('correo__contacto');
 contactLink.addEventListener('mouseover', () => {
   alert('¡Gracias por visitar mi página! Si desea ponerse en contacto conmigo, envíeme un correo electrónico a kevjeh@ejemplo.com');
 });
@@ -101,3 +101,55 @@ document.addEventListener("DOMContentLoaded", function() {
     window.open("mi-cv.pdf", "_blank");
   });
 });
+
+//slider
+
+const slider = document.querySelector('.slider');
+const sliderItems = document.querySelectorAll('.slider__item');
+const nextBtn = document.querySelector('.slider-next');
+const prevBtn = document.querySelector('.slider-prev');
+
+let currentIndex = 0;
+let itemWidth = 0;
+
+// Función que se encarga de ajustar el ancho de los items del slider
+const adjustItemWidth = () => {
+  itemWidth = slider.clientWidth;
+  sliderItems.forEach(item => {
+    item.style.width = `${itemWidth}px`;
+  });
+};
+
+// Función que se encarga de mover el slider al índice especificado
+const moveSlider = (index) => {
+  slider.style.transform = `translateX(-${index * itemWidth}px)`;
+  currentIndex = index;
+};
+
+// Función que se encarga de mover el slider al siguiente índice
+const moveToNext = () => {
+  if (currentIndex < sliderItems.length - 1) {
+    moveSlider(currentIndex + 1);
+  }
+  else {
+    moveSlider(0);
+  }
+};
+
+// Función que se encarga de mover el slider al índice anterior
+const moveToPrev = () => {
+  if (currentIndex > 0) {
+    moveSlider(currentIndex - 1);
+  }
+};
+
+// Event listeners para los botones de siguiente y anterior
+nextBtn.addEventListener('click', moveToNext);
+prevBtn.addEventListener('click', moveToPrev);
+
+// Event listener para ajustar el ancho de los items del slider cuando cambia el tamaño de la ventana
+window.addEventListener('resize', adjustItemWidth);
+
+// Ajustar el ancho de los items del slider al cargar la página
+adjustItemWidth();
+

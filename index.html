@@ -5,13 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 	<script src="https://kit.fontawesome.com/db56c14606.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+	<script src="js/particles.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  	<link rel="stylesheet" href="particles.css">
 </head>
 <body>
 	<header>
 		<div>
 			<h1>Kev Jeh</h1>
-			<img class="foto_de_perfil" src="C:/Users/jehel´s brothers/Documents/Curso Ticmas/Proyecto Final/img/foto de perfil.jpg"> 
+			<img class="foto_de_perfil" src="img/foto de perfil.jpg"> 
 		</div>
 		
 		<nav>
@@ -62,8 +64,22 @@
 					</ul></p>
 						
 				</li>
-			</ul>
+			</ul>			  
 		</section>
+
+		<div class="slider-container">
+			<div class="slider">
+			  <i class="slider__item"><img src="img/slider1.JPG" alt="Proyecto 1"></i>
+			  <i class="slider__item"><img src="img/slider2.JPG" alt="Proyecto 2"></i>
+			  <i class="slider__item"><img src="img/slider3.JPG" alt="Proyecto 3"></i>
+			  <i class="slider__item"><img src="img/slider4.JPG" alt="Proyecto 4"></i>
+			  
+			  
+			</div>
+			<button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+			<button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+		  </div>
+		  
 
 		<section id="educacion">
 			<h2>Formación y cursos</h2>
@@ -96,12 +112,14 @@
 			<h2>Habilidades y hobbies</h2>
 			<ul>
 				<li><i class="fa-regular fa-circle-check"></i>Soy un apasionado por la tecnología y el diseño web, con habilidades en HTML, CSS y JavaScript. Me encanta crear sitios web interactivos y amigables con el usuario. También tengo habilidades en diseño gráfico y edición de imágenes. Siempre estoy buscando aprender cosas nuevas y mejorar mis habilidades. Soy una persona muy creativa y me encanta trabajar en equipo..</li>
-				<li><i class="fa-regular fa-circle-check"></i>HTML</li>
-				<li><i class="fa-regular fa-circle-check"></i>CSS</li>
-				<li><i class="fa-regular fa-circle-check"></i>JavaScript</li>
-				<li><i class="fa-regular fa-circle-check"></i>Diseño gráfico</li>
-				<li><i class="fa-regular fa-circle-check"></i>Edición de imágenes</li>
-				<li><i class="fa-regular fa-circle-check"></i>Creatividad</li>
+				<li class="habilidades__hobbies"><i class="fa-brands fa-html5"></i>HTML</li>
+				<li class="habilidades__hobbies"><i class="fa-brands fa-css3-alt"></i>CSS</li>
+				<li class="habilidades__hobbies"><i class="fa-brands fa-square-js"></i>JavaScript</li>
+				<li class="habilidades__hobbies"><i class="fa-solid fa-pen-nib"></i>Diseño gráfico</li>
+				<li class="habilidades__hobbies"><i class="fa-solid fa-images"></i>Edición de imágenes</li>
+				<li class="habilidades__hobbies"><i class="fa-solid fa-lightbulb"></i>Creatividad</li>
+				<li class="habilidades__hobbies"><i class="fa-solid fa-music"></i>Escuchar musica</li>
+				<li class="habilidades__hobbies"><i class="fa-solid fa-umbrella-beach"></i>Ir a la playa</li>
 			</ul>
 		</section>
 
@@ -112,20 +130,27 @@
 					<h3>Barberia</h3>
 					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
 					<p><strong>Descripción:</strong> La barbería alura es un sitio web destinado a barberias para la promoción y gestion de turnos. Su diseño sencillo y responsivo permite una correcta fluidez en su navegación.</p>
-					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Barberia-Final">Proyecto Barberia</a></p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/Barberia-Final">Proyecto Barberia</a></p>
 				</li>
 				<li class="proyectos__listas">
 					<h3>Encriptador</h3>
 					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
 					<p><strong>Descripción:</strong>El encriptador/desencriptador, toma una cadena de caracteres de entrada y reemplaza las letras por su correspondiente encriptación. Luego, devuelve un mensaje de salida con el mensaje encriptado.</p>
-					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://github.com/KevJeh/Encriptador">Proyecto Enciptador</a></p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/Encriptador">Proyecto Enciptador</a></p>
 				</li>
 				<li class="proyectos__listas">
 					<h3>Pagina de empresa de software</h3>
 					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS y JavaScript</p>
 					<p><strong>Descripción:</strong>Este proyecto cuenta con un diseño responsivo y atractivo. Brinda la posibilidad de acercar al usuario a la empresa y permitirle conocer los planes y precios disponibles, ahorrando mucho tiempo y atrayendo nuevos clientes.</p>
-					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/CV-web/">Proyecto web - Empresa de software</a></p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/Layout-Responsive/">Proyecto web - Empresa de software</a></p>
 				</li>
+				<li class="proyectos__listas">
+					<h3>El solcito app</h3>
+					<p><strong>Tecnologías utilizadas:</strong>HTML, CSS, JavaScript</p>
+					<p><strong>Descripción:</strong>Este proyecto cuenta con un diseño sencillo y atractivo. Permite la gestion de una empresa ecomerce dedicada a la venta de instrumentos musicales. Cuenta con un inicio de sesion desarrollado en PHP y un control de acceso jerarquico.</p>
+					<p class="texto__repositorio"><strong>Repositorio:</strong> <a href="https://kevjeh.github.io/ElSolcito-APP/presentacion/index.html">Proyecto web - Empresa de instrumentos musicales</a></p>
+				</li>
+			
 			</ul>
 		</section>
 
@@ -163,9 +188,28 @@
 	</main>
 
 	<footer>
-		<a>Contacto: kevjeh@ejemplo.com</a>
+		<div>
+		<ul class="footer__social">
+            <li class="social__listas"><a href="https://www.facebook.com/" class="footer__midia"><img src="img/facebook.png" alt="facebook"></a></li>
+            <li class="social__listas"><a href="https://www.twitter.com" class="footer__midia"><img src="img/twitter.png" alt="twitter"></a></li>
+            <li class="social__listas"><a href="https://www.instagram.com" class="footer__midia"><img src="img/instagram.png" alt="instagram"></a></li>
+			<li class="social__listas"><a href="https://www.linkedin.com" class="footer__midia"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+		<a id="correo__contacto">Contacto: kevjeh@ejemplo.com</a>
+		</div>
+		<div id="animacion">
+
+		</div>
 	</footer>
 
-	<script src="script.js"></script>
+
+	<script src="js/script.js"></script>
+	<script src="particles-conf.js"></script>
+	<script>
+		particlesJS.load('mi-cv', 'js/particles.json', function() {
+		  console.log('js/particles.js loaded - callback');
+		});
+	  </script>
+
 </body>
 </html>
